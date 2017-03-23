@@ -16,7 +16,10 @@ Fractal 为复合数据输出提供一个展示和转化层，类似作用于 RE
 # 安装
 ## 通过composer
 
-``composer require league/fractal``
+{% highlight php %}
+composer require league/fractal
+{% endhighlight php %}
+
 很多现代PHP框架都会默认的包含 Composer autoloader ，但是还是请您再次确保下列文件包含进来
 {% highlight php %}
 <?php
@@ -27,7 +30,7 @@ require 'vendor/autoload.php';
 {% endhighlight php %}
 ## 单独安装
 如果没有使用composer 你也可以单独安装 Fractal ,用下面代码注册自动加载函数:
-``
+{% highlight php %}
 spl_autoload_register(function ($class) {
     $prefix = 'League\\Fractal\\';
     $base_dir = __DIR__ . '/src/';
@@ -42,12 +45,12 @@ spl_autoload_register(function ($class) {
         require $file;
     }
 });
-``
+{% endhighlight php %}
 或者，使用其他兼容PSR-4 规范的加载器。
 
 # 简单例子
 为简单起见，这个例程我们把所有代码放在一个文件里。在你的实际应用程序中，你可以把实例化，初始化放到应用启动过程中，或者你采用了IOC容器，交给容器去实例化初始化。把数据收集、JSON转化都单独放入不同的代码部分。
-``
+{% highlight php %}
 <?php
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
@@ -103,7 +106,7 @@ $array = $fractal->createData($resource)->toArray();
 echo $fractal->createData($resource)->toJson();
 
 // Outputs: {"data":[{"id":1,"title":"Hogfather","year":1998,"author":{"name":"Philip K Dick","email":"philip@example.org"}},{"id":2,"title":"Game Of Kill Everyone","year":2014,"author":{"name":"George R. R. Satan","email":"george@example.org"}}]}
-``
+{% endhighlight php %}
 值得注意的是，相对于直接使用``Transformers``,回调函数也是一个非常好的替代方案。回调函数能使你复用``Transformers``并且保持你的应用程序控制器层轻量级。
 
 # 环境要求
