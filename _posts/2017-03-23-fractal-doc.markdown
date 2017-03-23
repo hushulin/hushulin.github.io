@@ -17,6 +17,67 @@ Fractal 为复合数据输出提供一个展示和转化层，类似作用于 RE
 通过composer
 ``composer require league/fractal``
 
+# 简单例子
+为简单起见，这个例程我们把所有代码放在一个文件里。在你的实际应用程序中，你可以把实例化，初始化放到应用启动过程中，或者你采用了IOC容器，交给容器去实例化初始化。把数据收集、JSON转化都单独放入不同的代码部分。
+``
+<?php
+use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
+
+// Create a top level instance somewhere
+$fractal = new Manager();
+
+// Get data from some sort of source
+// Most PHP extensions for SQL engines return everything as a string, historically
+// for performance reasons. We will fix this later, but this array represents that.
+$books = [
+	[
+		'id' => '1',
+		'title' => 'Hogfather',
+		'yr' => '1998',
+		'author_name' => 'Philip K Dick',
+		'author_email' => 'philip@example.org',
+	],
+	[
+		'id' => '2',
+		'title' => 'Game Of Kill Everyone',
+		'yr' => '2014',
+		'author_name' => 'George R. R. Satan',
+		'author_email' => 'george@example.org',
+	]
+];
+
+// Pass this array (collection) into a resource, which will also have a "Transformer"
+// This "Transformer" can be a callback or a new instance of a Transformer object
+// We type hint for array, because each item in the $books var is an array
+$resource = new Collection($books, function(array $book) {
+    return [
+        'id'      => (int) $book['id'],
+        'title'   => $book['title'],
+        'year'    => (int) $book['yr'],
+        'author'  => [
+        	'name'  => $book['author_name'],
+        	'email' => $book['author_email'],
+        ],
+        'links'   => [
+            [
+                'rel' => 'self',
+                'uri' => '/books/'.$book['id'],
+            ]
+        ]
+    ];
+});
+
+// Turn that into a structured array (handy for XML views or auto-YAML converting)
+$array = $fractal->createData($resource)->toArray();
+
+// Turn all of that into a JSON string
+echo $fractal->createData($resource)->toJson();
+
+// Outputs: {"data":[{"id":1,"title":"Hogfather","year":1998,"author":{"name":"Philip K Dick","email":"philip@example.org"}},{"id":2,"title":"Game Of Kill Everyone","year":2014,"author":{"name":"George R. R. Satan","email":"george@example.org"}}]}
+``
+值得注意的是，相对于直接使用``Transformers``,回调函数也是一个非常好的替代方案。回调函数能使你复用``Transformers``并且保持你的应用程序控制器层轻量级。
+
 # 环境要求
 支持以下PHP版本和HHVM
 - PHP 5.4
