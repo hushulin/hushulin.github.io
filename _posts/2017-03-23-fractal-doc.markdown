@@ -109,6 +109,18 @@ echo $fractal->createData($resource)->toJson();
 {% endhighlight php %}
 值得注意的是，相对于直接使用``Transformers``,回调函数也是一个非常好的替代方案。回调函数能使你复用``Transformers``并且保持你的应用程序控制器层轻量级。
 
+# 术语表
+了解更多关于Fractal的常见概念
+
+## Cursor
+## Include
+## Manager
+## Pagination
+## Paginator
+## Resource
+## Serializer
+## Transformer
+
 # 环境要求
 支持以下PHP版本和HHVM
 - PHP 5.4
