@@ -14,8 +14,36 @@ Fractal 为复合数据输出提供一个展示和转化层，类似作用于 RE
 这个包遵循PHP的 PSR-1, PSR-2 和 PSR-4规范。如果你发现有遵循漏洞，请通过pull request发一个补丁上来。
 
 # 安装
-通过composer
+## 通过composer
+
 ``composer require league/fractal``
+很多现代PHP框架都会默认的包含 Composer autoloader ，但是还是请您再次确保下列文件包含进来
+{% highlight php %}
+<?php
+
+// Include the Composer autoloader
+require 'vendor/autoload.php';
+
+{% endhighlight php %}
+## 单独安装
+如果没有使用composer 你也可以单独安装 Fractal ,用下面代码注册自动加载函数:
+``
+spl_autoload_register(function ($class) {
+    $prefix = 'League\\Fractal\\';
+    $base_dir = __DIR__ . '/src/';
+    $len = strlen($prefix);
+    if (strncmp($prefix, $class, $len) !== 0) {
+        // no, move to the next registered autoloader
+        return;
+    }
+    $relative_class = substr($class, $len);
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+    if (file_exists($file)) {
+        require $file;
+    }
+});
+``
+或者，使用其他兼容PSR-4 规范的加载器。
 
 # 简单例子
 为简单起见，这个例程我们把所有代码放在一个文件里。在你的实际应用程序中，你可以把实例化，初始化放到应用启动过程中，或者你采用了IOC容器，交给容器去实例化初始化。把数据收集、JSON转化都单独放入不同的代码部分。
