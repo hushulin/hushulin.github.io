@@ -58,19 +58,17 @@
 ---
 
 # 开源项目和作品
-（这一段用于放置工作以外的、可证明你的能力的材料）
 
 ## 开源项目
-（对于程序员来讲，没有什么比Show me the code能有说服力了）
 
- - [STU](http://github.com/yourname/projectname)：项目的简要说明，Star和Fork数多的可以注明
- - [WXYZ](http://github.com/yourname/projectname)：项目的简要说明，Star和Fork数多的可以注明
+ - [maple](https://github.com/hushulin/maple)：开源网络服务器的php版trigger
+ - [bowslim](https://github.com/hushulin/bowslim)：基于slim开发的针对公司特定业务场景的简易使用的php开发框架
+ - [synbass](https://github.com/hushulin/synbass)：独立自主研发的简单易用的php开发框架
+ - [we7utils](https://github.com/hushulin/we7utils)：针对微擎系统模块开发的一套IOC容器开发套件，同样适用于其他开发框架
 
 ## 技术文章
-（挑选你写作或翻译的技术文章，好的文章可以从侧面证实你的表达和沟通能力，也帮助招聘方更了解你）
 
-- [一个产品经理眼中的云计算：前生今世和未来](http://get.jobdeer.com/706.get)
-- [来自HeroKu的HTTP API 设计指南(翻译文章)](http://get.jobdeer.com/343.get) （ ```好的翻译文章可以侧证你对英文技术文档的阅读能力```）
+ - [Fractal开发文档(翻译)](https://hushulin.github.io/2017/03/23/fractal-doc.html)
 
 ## 演讲和讲义
 （放置你代表公司在一些技术会议上做过的演讲，以及你在公司分享时制作的讲义）
