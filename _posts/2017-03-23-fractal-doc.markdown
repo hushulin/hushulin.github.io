@@ -3,6 +3,8 @@
 Fractal 为复合数据输出提供一个展示和转化层，类似作用于 RESTful APIs，并且在 JSON 中工作得很好。Fractal 可以认为是你的应用程序中 JSON/YAML/等等的视图层。
 当构建API时，人们最常规的做法是单纯的从数据库查找出数据传递给json_encode()。这对于“简单的”APIs可能是可行的，但是如果它们对外提供服务，或者被移动应用调用，那么它很快将会引发不一致的输出问题。
 
+[http://fractal.thephpleague.com/](http://fractal.thephpleague.com/)
+
 # 目标
 - 在源数据与输出层之间，提供一个保护中间层，以致于数据结构发生变化时不会影响用户
 - 系统的数据转换，避免了foreach() 和 对数据的布尔值判断
