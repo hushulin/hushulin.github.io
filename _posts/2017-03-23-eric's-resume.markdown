@@ -12,7 +12,7 @@
 # 个人信息
 
  - 胡树林/男/1990
- - 本科/中南大学电子信息工程
+ - 本科/中南大学/电子信息工程
  - 工作年限：6年
  - 技术博客：[http://hushulin.github.io](http://hushulin.github.io)
  - Github：http://github.com/hushulin
