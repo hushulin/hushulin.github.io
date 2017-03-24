@@ -83,6 +83,7 @@
 以下均为我熟练使用的技能
 
 - Web开发：PHP/Python
+- 服务器：Gentoo/CentOS/Ubuntu
 - Web服务器：Nginx/Apache
 - Web框架：Laravel/Lumen/Slim/OctoberCMS/Flask
 - 前端框架：Bootstrap/AngularJS/Vue.js/HTML5
