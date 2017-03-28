@@ -1,7 +1,7 @@
 
-{% highlight php %}
+{% highlight js %}
 
-;(function (factory) {
+(function (factory) {
 	// 自运行	
 	// Factory run with jQuery.
 	if (typeof define === 'function' && define.amd) {
@@ -79,4 +79,4 @@
 
 });
 
-{% endhighlight php %}
+{% endhighlight js %}
