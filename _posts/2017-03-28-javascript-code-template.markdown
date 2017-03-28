@@ -1,6 +1,6 @@
 # javascript template
 this code allow you write javascript faster.
-{% highlight js %}
+{% highlight 'javascript' %}
 (function (factory) {
 	// 自运行	
 	// Factory run with jQuery.
@@ -79,4 +79,4 @@ this code allow you write javascript faster.
 
 });
 
-{% endhighlight js %}
+{% endhighlight %}
