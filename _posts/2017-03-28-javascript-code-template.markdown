@@ -1,6 +1,7 @@
 # javascript template
 this code allow you write javascript faster.
 
+{% highlight 'js' %}
 (function (factory) {
 	// 自运行	
 	// Factory run with jQuery.
@@ -16,7 +17,7 @@ this code allow you write javascript faster.
 	}
 })(function ($) {
 	// 严格模式 
-	'use strict';
+	\'use strict\';
 	
 	// 常用变量 常量 
 	var $window = $(window),
@@ -78,4 +79,4 @@ this code allow you write javascript faster.
 	});
 
 });
-
+{% endhighlight %}
