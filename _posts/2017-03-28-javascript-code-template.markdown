@@ -1,4 +1,6 @@
+
 {% highlight javascript %}
+
 ;(function (factory) {
 	// 自运行	
 	// Factory run with jQuery.
@@ -45,24 +47,24 @@
 
 	// Register as jQuery plugin
 	$.fn.xxx = function (options) {
-		var args = toArray(arguments, 1),
-			result;
+		// var args = toArray(arguments, 1),
+		// 	result;
 
-		this.each(function () {
-			var $this = $(this),
-				data = $this.data('cropper'),
-				fn;
+		// this.each(function () {
+		// 	var $this = $(this),
+		// 		data = $this.data('cropper'),
+		// 		fn;
 
-			if (!data) {
-				$this.data('xxx', (data = new XXX(this, options)));
-			}
+		// 	if (!data) {
+		// 		$this.data('xxx', (data = new XXX(this, options)));
+		// 	}
 
-			if (typeof options === 'string' && $.isFunction((fn = data[options]))) {
-				result = fn.apply(data, args);
-			}
-		});
+		// 	if (typeof options === 'string' && $.isFunction((fn = data[options]))) {
+		// 		result = fn.apply(data, args);
+		// 	}
+		// });
 
-		return isUndefined(result) ? this : result;
+		// return isUndefined(result) ? this : result;
 	};
 
 	// No conflict
@@ -76,4 +78,5 @@
 	});
 
 });
+
 {% endhighlight javascript %}
