@@ -1,5 +1,5 @@
 
-{% highlight javascript %}
+{% highlight js %}
 
 ;(function (factory) {
 	// 自运行	
@@ -79,4 +79,4 @@
 
 });
 
-{% endhighlight javascript %}
+{% endhighlight js %}
