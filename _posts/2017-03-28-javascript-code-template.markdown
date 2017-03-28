@@ -1,4 +1,5 @@
-
+# javascript template
+this code allow you write javascript faster.
 {% highlight js %}
 
 (function (factory) {
