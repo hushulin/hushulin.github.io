@@ -2,7 +2,7 @@
 this code allow you write javascript faster.
 
 
-```
+```js
 // Javascript template
 (function (factory) {
 	// 自运行	
