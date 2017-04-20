@@ -1,6 +1,8 @@
 # javascript template
 this code allow you write javascript faster.
-************
+
+
+
 // Javascript template
 (function (factory) {
 	// 自运行	
@@ -79,4 +81,3 @@ this code allow you write javascript faster.
 	});
 
 });
-************
