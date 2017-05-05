@@ -49,6 +49,12 @@ string 或者 array
 |-------|:--------:|:----------------:|
 |1001   | 点赞     | user_id , post_id|
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 
 则PHP的对应书写就是
 `peony_logger(1001 , [1003 , 45]);`
