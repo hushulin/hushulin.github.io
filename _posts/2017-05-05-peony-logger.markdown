@@ -12,7 +12,7 @@
 
 
 ## JavaScript
-1. 引用demo代码 '<script type="text/javascript" src="./log4javascript.js"></script>'
+1. 引用demo代码 `<script type="text/javascript" src="./log4javascript.js"></script>`
 2. 注意，该插件依赖jQuery，扩展jQuery插件
 
 
