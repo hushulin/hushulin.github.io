@@ -56,3 +56,130 @@ string 或者 array
 其中 1003 是user_id 用户id
 
 其中 45 是post_id 文章id
+
+# 附录JavaScript源代码实现
+```js
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
+})(function ($) {
+	'use strict';
+
+	var $window = $(window),
+		$document = $(document);
+
+	var console = window.console || { log: function () {} };
+
+	function isNumber(n) {
+		return typeof n === 'number';
+	}
+
+	function isUndefined(n) {
+		return typeof n === 'undefined';
+	}
+
+	function toArray(obj, offset) {
+		var args = [];
+
+		if (isNumber(offset)) { // It's necessary for IE8
+			args.push(offset);
+		}
+
+		return args.slice.apply(obj, args);
+	}
+	
+	// 类
+	function PeonyLogger($container , $options) {
+
+		this.$event_id_key = "event_id";
+		this.$event_data_key = "event_data";
+		this.$decollator = "&&";
+		this.$url = "/peony_logger.php";
+
+		this.$container = $container;
+
+		if ( $options ) {
+
+			this.id = $options[this.$event_id_key];
+
+			if ( $.isArray($options[this.$event_data_key]) ) {
+				this.data = $options[this.$event_data_key].join(this.$decollator);
+			} else {
+				this.data = $options[this.$event_data_key];
+			}
+
+		} else {
+
+			this.id = this.$container.attr(this.$event_id_key);
+			this.data = this.$container.attr(this.$event_data_key);
+		}
+		
+		this.$container.on('click' , $.proxy(this.write , this));
+	}
+	
+	// 原型 业务逻辑 
+	PeonyLogger.prototype = {
+
+		constructor: PeonyLogger,
+
+		write: function (event) {
+
+			var data = new FormData();
+
+			data.append(this.$event_id_key, this.id);
+			data.append(this.$event_data_key, this.data);
+
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+				if (this.readyState === 4) {
+					console.log(this.responseText);
+				}
+			});
+
+			xhr.open("POST", this.$url);
+			xhr.setRequestHeader("cache-control", "no-cache");
+			xhr.send(data);
+
+		}
+	};
+
+	// Save the other 
+	PeonyLogger.other = $.fn.peony_logger;
+
+	// Register as jQuery plugin
+	$.fn.peony_logger = function (options) {
+		var args = toArray(arguments, 1),
+			result;
+
+		this.each(function () {
+
+			var $this = $(this),
+				data = $this.data('peony_logger'),
+				fn;
+
+			if (!data) {
+				$this.data('peony_logger', (data = new PeonyLogger($this, options)));
+			}
+
+			if (typeof options === 'string' && $.isFunction((fn = data[options]))) {
+				result = fn.apply(data, args);
+			}
+		});
+
+		return isUndefined(result) ? this : result;
+	};
+
+	$.fn.peony_logger.noConflict = function () {
+		$.fn.peony_logger = PeonyLogger.other;
+		return this;
+	};
+
+});
+```
