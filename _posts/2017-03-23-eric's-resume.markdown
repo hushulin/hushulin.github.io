@@ -63,25 +63,17 @@
 
 ### 聚居网装修平台
 > 参与讨论用户需求,并对需求进行技术层面分析,设计功能,根据实际情况对开发框架的优化以及裁剪。同时参与编写核心代码,主导攻克技术难题。处理突发情况。
+
 ### 主要工作内容
 > 初期对框架选型并做底层优化；
-
 负责协调技术部内部与公司其它部门间关系，解决争议；
-
 初期对不熟悉开发框架的技术人员作快速培训,并教会他们使用我造的轮子,能够提高开发效率；
-
 兼任运维工作,运用自己写的自动化发布工具,规范了公司开发-测试-发布-部署流程；
-
 优化数据库,并使用集群技术方案解决了高并发带来的系统瓶颈问题；
-
 主导并规划了整套远程调用框架,编写核心脚本,目的为了模块化开发,达到拆解中大型系统；
-
 研究及时通讯,并设计出一套抗高并发,高可用的分布式及时通讯解决方案,应用于安卓和桌面端；(苹果系统用自身的推送服务器;服务端开发使用高性能的C++)
-
 另对公司系统对微信公众平台的对接作了规范,规避bug；
-
-另改善前端js开发框架,适应实际开发情况.
-
+另改善前端js开发框架,适应实际开发情况。
 等等
 
 ---
@@ -89,7 +81,7 @@
 # 开源项目和作品
 
 ## 开源项目
- - [seaslog（活跃参与者）](http://neeke.github.io/SeasLog)：著名php日志扩展参与者，兼任QA[CREDITS](https://github.com/Neeke/SeasLog/blob/master/CREDITS)
+ - [seaslog（活跃参与者）](http://neeke.github.io/SeasLog)：著名php日志扩展参与者，兼任QA *[CREDITS](https://github.com/Neeke/SeasLog/blob/master/CREDITS)
  - [maple](https://github.com/hushulin/maple)：开源网络服务器的php版trigger
  - [bowslim](https://github.com/hushulin/bowslim)：基于slim开发的针对公司特定业务场景的简易使用的php开发框架
  - [synbass](https://github.com/hushulin/synbass)：独立自主研发的简单易用的php开发框架
@@ -116,7 +108,7 @@
 - 单元测试：PHPUnit/SimpleTest
 - 云和开放平台：SAE/BAE/AliyunECS/微博开放平台/微信应用开发
 - 深入研究领域：分布式数据强一致（Paxos/Raft）/高并发高可用网络（Linux/TCP内核实现、TCP拥塞控制算法等）
-- 业余研究领域：Theano/TensorFlow/Keras
+- 业余研究领域：机器学习/深度学习/Theano/TensorFlow/Keras
 
 ---
 
